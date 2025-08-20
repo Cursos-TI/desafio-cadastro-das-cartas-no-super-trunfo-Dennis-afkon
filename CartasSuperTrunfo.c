@@ -32,7 +32,6 @@ float calcularSuperPoder(Carta c) {
 int main() {
     Carta carta1, carta2;
 
-    // Cadastro da Carta 1
     printf("Cadastro da Carta 1:\n");
     printf("Estado (A-H): ");
     scanf(" %c", &carta1.estado);
@@ -59,12 +58,10 @@ int main() {
     scanf("%d", &carta1.pontosTuristicos);
     limparEntrada();
 
-    // Cálculos da Carta 1
     carta1.densidade_populacional = carta1.populacao / carta1.area;
     carta1.pib_per_capita = (carta1.pib * 100000000) / carta1.populacao;
     carta1.super_poder = calcularSuperPoder(carta1);
 
-    // Cadastro da Carta 2
     printf("\nCadastro da Carta 2:\n");
     printf("Estado (A-H): ");
     scanf(" %c", &carta2.estado);
@@ -90,12 +87,10 @@ int main() {
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &carta2.pontosTuristicos);
 
-    // Cálculos da Carta 2
     carta2.densidade_populacional = carta2.populacao / carta2.area;
     carta2.pib_per_capita = (carta2.pib * 100000000) / carta2.populacao;
     carta2.super_poder = calcularSuperPoder(carta2);
 
-    // Exibição das cartas
     printf("\nCarta 1:\n");
     printf("Estado: %c\n", carta1.estado);
     printf("Código: %s\n", carta1.codigo);
@@ -120,7 +115,6 @@ int main() {
     printf("PIB per Capita: %.2f reais\n", carta2.pib_per_capita);
     printf("Super Poder: %.2f\n", carta2.super_poder);
 
-    // Comparações
     printf("\nComparação de Cartas:\n");
     printf("População: Carta 1 venceu (%d)\n", carta1.populacao > carta2.populacao);
     printf("Área: Carta 1 venceu (%d)\n", carta1.area > carta2.area);
@@ -130,7 +124,6 @@ int main() {
     printf("PIB per Capita: Carta 1 venceu (%d)\n", carta1.pib_per_capita > carta2.pib_per_capita);
     printf("Super Poder: Carta 1 venceu (%d)\n", carta1.super_poder > carta2.super_poder);
 
-    // Contagem de vitórias
     int vitoriasCarta1 = 0;
     int vitoriasCarta2 = 0;
 
@@ -155,7 +148,6 @@ int main() {
     vitoriasCarta1 += carta1.super_poder > carta2.super_poder;
     vitoriasCarta2 += carta2.super_poder > carta1.super_poder;
 
-    // Mensagem final
     printf("\nResultado Final:\n");
     if (vitoriasCarta1 > vitoriasCarta2) {
         printf("🏆 Carta 1 é a vencedora com %d atributos superiores!\n", vitoriasCarta1);
